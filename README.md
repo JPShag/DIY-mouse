@@ -65,7 +65,11 @@ Today, I’ll share a method to spoof your Arduino to act like a real mouse. Let
 
 ### 6. Use External Power Supply
 
-- Follow the instructions [here](https://www.unknowncheats.me/forum/4066011-post17.html) for using an external power supply.
+```Ok so the thing that @itsmemadd mentioned is that if you have an external power source for your Arduino other than through the micro USB then vgc when loaded up cannot see the com port it's because when the Arduino recieves power it's in a vulnerable state where the bootloader needs time to setup correctly, so when you power on your pc and just use micro USB for power vgc is also loading and it can see the bootloader com port, you cannot see it cus for you windows UI is loading but vgc is so shit and intrusive it seems things before you do . So yea power the Arduino externally and just wait 10 seconds before you connect it to your pc while STILL HAVING IT CONNECT TO POWER ADAPTER.
+```
+So your pc turning on routine will be like this
+
+Connect adapter to Arduino => power on the adapter => wait 10 seconds => connect Arduino via USB to pc => turn on your pc but keep both the usb and adapter connected all the time => you're good to go but to trigger the bootloader you will have to use the button on Arduino```
 
 ### 7. Secure Your Script
 
